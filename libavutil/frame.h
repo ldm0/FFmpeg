@@ -722,9 +722,16 @@ void av_frame_move_ref(AVFrame *dst, AVFrame *src);
  * Allocate new buffer(s) for audio or video data.
  *
  * The following fields must be set on frame before calling this function:
- * - format (pixel format for video, sample format for audio)
- * - width and height for video
- * - nb_samples and channel_layout for audio
+ * 
+ * Video:
+ * - format (pixel format)
+ * - width
+ * - height
+ * 
+ * Audio:
+ * - format (sample format)
+ * - nb_samples
+ * - channel_layout or channels
  *
  * This function will fill AVFrame.data and AVFrame.buf arrays and, if
  * necessary, allocate and fill AVFrame.extended_data and AVFrame.extended_buf.
